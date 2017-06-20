@@ -1,0 +1,145 @@
+// main.scss
+// ============================
+//   IMPORTS
+// ============================
+// need to import custom variables first to set to default
+@import 'custom-variables';
+@import 'custom-bootstrap';
+@import 'rogan';
+
+
+// ============================
+//   MAIN
+// ============================
+
+
+
+// ============================
+//   BREAKPOINTS
+// ============================
+// Extra small devices (portrait phones, less than 576px)
+// No media query
+body {
+  max-width: 960px;
+  margin: 5px auto;
+}
+
+img {
+  width: 100%;
+}
+
+header {
+  @include make-row();
+  margin-bottom: 1em;
+
+  img {
+    width: 100%;
+  }
+
+  .logo {
+    text-align: center;
+  }
+
+  .header-content {
+    display: none;
+    color: $secondary-color;
+    h1 {
+      font-family: 'roganbold_italic', sans-serif;
+      font-size: 4em;
+    }
+    h2 {
+      font-family: 'roganextralight', serif;
+      font-size: 2em;
+    }
+  }
+}
+
+.hero {
+  @include make-row();
+  img {
+    @include make-xs-column(12);
+  }
+  p {
+    @include make-xs-column(12);
+    @include make-md-column(8);
+  }
+}
+
+.section-header {
+  @include make-xs-column(12);
+  // @include make-md-column(4);
+  font-family: 'roganregular', sans-serif;
+  font-size: 2.4em;
+  color: $tertiary-color;
+  text-transform: uppercase;
+}
+
+.portfolio {
+  @include make-row();
+  section {
+    @include make-xs-column(12);
+  }
+}
+
+.portfolio, .hero-content {
+  padding: 0 1em;
+}
+
+.action {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.action-content {
+  background-color: $primary-color;
+  color: white;
+  margin-top: -20px;
+  padding: 0.8em 0;
+  p {
+    margin: 0;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media screen and (min-width: 768px) {
+  header {
+    border-bottom: 3px solid $tertiary-color;
+    .logo {
+      @include make-sm-column(2);
+      text-align: left;
+      img {
+        width: 160px;
+      }
+    }
+    .header-content {
+      display: block;
+      @include make-sm-column(10);
+      text-align: right;
+    }
+  }
+
+  .hero {
+    p {
+      @include make-sm-column(8);
+    }
+  }
+
+  .portfolio {
+    section {
+      @include make-sm-column(4);
+    }
+  }
+
+  .action {
+    color: $secondary-color;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+// @media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) { ... }
