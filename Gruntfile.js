@@ -16,7 +16,7 @@ module.exports = function(grunt) {
       // this is the 'production' sass config used with the 'grunt buildcss' command
       dist: {
         options: {
-          style: 'compressed',
+          style: 'expanded',
           loadPath: 'node_modules/bootstrap-sass/assets/stylesheets'
         },
         files: {
